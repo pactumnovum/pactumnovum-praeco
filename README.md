@@ -18,6 +18,7 @@ npm run typecheck
 npm run dry         # one full engine run against fixtures/, no network, no paid calls
 npm run engine      # one real run (needs the variables in .env.example)
 npx tsx src/cli.ts status
+npx tsx src/cli.ts answer short bluesky "Who is behind this?"   # pick a reply from the answer bank
 ```
 
 `DRY_RUN=1` means: fixtures instead of the network, the model stub instead of a
@@ -48,6 +49,8 @@ the next hour without repeating paid work.
 | Every number in a post must come from the fact sheet | `verifyPostNumbers` in `src/facts/numbers.ts` |
 | The system prompt goes with every model call, loaded from `prompts/system.md` | `src/llm/prompt.ts`, tested against `CLAUDE.md` |
 | Text from outside is wrapped as data | `asData` in `src/llm/prompt.ts` |
+| Replies only from `answers/bank.yaml`, never written by a model; bank validated on load | `src/answers/` (layer 3) |
+| Every published link is `https://pactumnovum.org/?via=<channel>` | `src/links.ts` |
 | Monthly model budget; unset means no paid calls | `src/llm/meter.ts` |
 | Publishing only when `PUBLISHING_ENABLED` is exactly `true` | `src/config.ts` |
 | No secrets in logs | `src/log.ts` |
@@ -65,13 +68,28 @@ All calls go through `src/llm/`. Slugs were checked on the providers; see `src/l
 
 Jev has no system field, so the system prompt travels in `state.rules`.
 
+## Answer bank (layer 3)
+
+`answers/bank.yaml` is written and approved by people; the engine never edits it.
+On load it is checked against its own rules (280 characters for `short` including
+the link, 150 words for `long`, no links in the text, unique ids) and the founder
+answer must equal the system prompt's word for word. A bank that fails is not used
+at all, and the engine stays silent.
+
+For each message Jev answers one yes/no question per `never_reply` intent (any
+`p ≥ 0.50` means silence) and one per entry. The best entry at `p ≥ 0.90` is used
+exactly as written. With no match, social replies stay silent and email gets
+`standard.decline`. Nothing calls this yet; replies arrive with later milestones.
+
 ## Layout
 
 ```
+answers/bank.yaml     approved replies (layer 3)
 config/sources.json   live sources
 fixtures/             invented test data and the dry-run source list
 migrations/           D1 schema (engine_ tables only)
 prompts/system.md     the system prompt, word for word
+src/answers/          answer bank loading, validation and selection
 src/db/               D1 over REST, local SQLite, migrations, SQL guard
 src/facts/            number extraction and verification
 src/llm/              model clients, stub, budget meter
