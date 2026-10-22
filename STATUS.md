@@ -3,7 +3,7 @@
 _Updated: 2026-10-22 · dev machine_
 
 ## Now
-Pushed to GitHub (`origin/main`), CI green. Milestone 1 and layer 3 (answer bank) pass in dry run. Next is the first live run, which needs secrets.
+Milestone 1 and layer 3 (answer bank) pass in dry run, CI green. The site side is live. Next: make the `anthropic` provider path work without Jev, then the first live run.
 
 ## State
 - ✅ Fetch: 11 RSS/Atom feeds (en, es, fr, de, pt), 4 World Bank indicators, Eurostat Gini, 2 report watchers, Bluesky trending topics
@@ -12,21 +12,23 @@ Pushed to GitHub (`origin/main`), CI green. Milestone 1 and layer 3 (answer bank
 - ✅ D1 over REST, local SQLite for dry runs, SQL guard, migration 0001
 - ✅ Layer 3: `answers/bank.yaml` loaded and validated, Jev picks an entry, text used as written (`src/answers/`)
 - ✅ Signature aggregates read per `via`
+- ✅ Site side live (22 Oct): `signatures.via` and the anonymous `visits` table exist in D1, the page sends `?via=` with signatures and visit counts
 - ✅ Budget meter, secret redaction, 74 tests, ci.yml (tests, type check, gitleaks), engine.yml (hourly)
 - 🚧 IMF adapter written but disabled: the DataMapper API returned 403 to non-browser clients
 - 🚧 OECD not implemented yet
 - 🚧 Report editions are recorded, but PDF text is not extracted, so they end as `no_source_text`
 
 ## Next
-1. Set secrets and variables, run `engine.yml` by hand, check the first live run's counts
-2. Check that `typesafe/jev-1.14` answers with real items and look at the p distribution
-3. Decide the open answer bank points below, then edit `answers/bank.yaml` (people only)
-4. Milestone 2: ideas (Haiku), ethics check (Sonnet + Jev per rule), queue
-5. Read `visits` aggregates for conversion per `via`: CLAUDE.md section 7 describes the table, but sections 1 and 7 still say only `signatures` may be read, so settle the spec first
-6. Comparisons computed by code (`src/facts/compare.ts`) for "earns in a minute what…" posts
+1. `LLM_PROVIDER=anthropic` without Jev (CLAUDE.md section 6): Haiku with a constrained JSON choice, confirmed by Sonnet at the same thresholds, for sorting, claim support and answer selection. Test against fixtures, no secrets needed
+2. Set secrets and variables, run `engine.yml` by hand, check the first live run's counts
+3. Check that `typesafe/jev-1.14` answers with real items and look at the p distribution
+4. Decide the open answer bank points below, then edit `answers/bank.yaml` (people only)
+5. Milestone 2: ideas (Haiku), ethics check (Sonnet + Jev per rule), queue
+6. Read `visits` aggregates for conversion per `via`: CLAUDE.md section 7 describes the table, but sections 1 and 7 still say only `signatures` may be read, so settle the spec first
+7. Comparisons computed by code (`src/facts/compare.ts`) for "earns in a minute what…" posts
 
 ## Watch out
-- OpenRouter is not available yet. If that holds, the first live run uses `LLM_PROVIDER=anthropic`, where Jev is not available (CLAUDE.md section 6). Check that sorting, fact-check and answer selection work on that path before relying on it
+- OpenRouter is not available yet. If that holds, the first live run uses `LLM_PROVIDER=anthropic`, where Jev is not available (Next step 1)
 - With `MONTHLY_AI_BUDGET_USD` unset or 0 the engine makes no paid calls; items wait as `new`
 - The fact-check asks Sonnet for every claim below p 0.90, including very low ones (as specified); this is the main cost driver
 - Without D1 secrets, scheduled runs on Actions end with a warning and do nothing
