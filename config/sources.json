@@ -1,0 +1,65 @@
+{
+  "feeds": [
+    { "id": "inequality-org", "name": "Inequality.org", "lang": "en", "url": "https://inequality.org/feed/" },
+    { "id": "oxfam-en", "name": "Oxfam International", "lang": "en", "url": "https://www.oxfam.org/en/rss.xml" },
+    { "id": "un-news-en", "name": "UN News", "lang": "en", "url": "https://news.un.org/feed/subscribe/en/news/topic/economic-development/feed/rss.xml" },
+    { "id": "aljazeera-en", "name": "Al Jazeera", "lang": "en", "url": "https://www.aljazeera.com/xml/rss/all.xml" },
+    { "id": "un-news-es", "name": "Noticias ONU", "lang": "es", "url": "https://news.un.org/feed/subscribe/es/news/topic/economic-development/feed/rss.xml" },
+    { "id": "el-pais-economia", "name": "El País", "lang": "es", "url": "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/economia/portada" },
+    { "id": "un-news-fr", "name": "ONU Info", "lang": "fr", "url": "https://news.un.org/feed/subscribe/fr/news/topic/economic-development/feed/rss.xml" },
+    { "id": "rfi-economie", "name": "RFI", "lang": "fr", "url": "https://www.rfi.fr/fr/economie/rss" },
+    { "id": "tagesschau-wirtschaft", "name": "tagesschau", "lang": "de", "url": "https://www.tagesschau.de/wirtschaft/index~rss2.xml" },
+    { "id": "un-news-pt", "name": "ONU News", "lang": "pt", "url": "https://news.un.org/feed/subscribe/pt/news/topic/economic-development/feed/rss.xml" },
+    { "id": "agencia-brasil-economia", "name": "Agência Brasil", "lang": "pt", "url": "https://agenciabrasil.ebc.com.br/rss/economia/feed.xml" }
+  ],
+  "datasets": [
+    {
+      "id": "worldbank-gini", "name": "World Bank", "kind": "worldbank", "unit": "count",
+      "url": "https://api.worldbank.org/v2/country/all/indicator/SI.POV.GINI?format=json&mrnev=1&per_page=400",
+      "pageUrl": "https://data.worldbank.org/indicator/SI.POV.GINI"
+    },
+    {
+      "id": "worldbank-top10-share", "name": "World Bank", "kind": "worldbank", "unit": "percent",
+      "url": "https://api.worldbank.org/v2/country/all/indicator/SI.DST.10TH.10?format=json&mrnev=1&per_page=400",
+      "pageUrl": "https://data.worldbank.org/indicator/SI.DST.10TH.10"
+    },
+    {
+      "id": "worldbank-bottom10-share", "name": "World Bank", "kind": "worldbank", "unit": "percent",
+      "url": "https://api.worldbank.org/v2/country/all/indicator/SI.DST.FRST.10?format=json&mrnev=1&per_page=400",
+      "pageUrl": "https://data.worldbank.org/indicator/SI.DST.FRST.10"
+    },
+    {
+      "id": "worldbank-extreme-poverty", "name": "World Bank", "kind": "worldbank", "unit": "percent",
+      "url": "https://api.worldbank.org/v2/country/all/indicator/SI.POV.DDAY?format=json&mrnev=1&per_page=400",
+      "pageUrl": "https://data.worldbank.org/indicator/SI.POV.DDAY"
+    },
+    {
+      "id": "eurostat-gini", "name": "Eurostat", "kind": "eurostat", "unit": "count",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/ilc_di12?format=JSON&lang=EN&lastTimePeriod=1",
+      "pageUrl": "https://ec.europa.eu/eurostat/databrowser/view/ilc_di12/default/table"
+    },
+    {
+      "id": "imf-gdp-per-capita", "name": "IMF", "kind": "imf", "unit": "count", "enabled": false,
+      "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC",
+      "pageUrl": "https://www.imf.org/external/datamapper/NGDPDPC"
+    }
+  ],
+  "reports": [
+    {
+      "id": "ubs-global-wealth-report", "name": "UBS Global Wealth Report",
+      "url": "https://www.ubs.com/global/en/wealthmanagement/insights/global-wealth-report.html",
+      "linkPattern": "/(gwr-[^/]*|global-wealth-report-[^/]*)\\.pdf$"
+    },
+    {
+      "id": "oxfam-research", "name": "Oxfam",
+      "url": "https://www.oxfam.org/en/research",
+      "linkPattern": "/en/research/[^/?#]*(inequal|wealth|billionaire|richest|takers|tax)"
+    }
+  ],
+  "topics": [
+    {
+      "id": "bluesky-trending", "name": "Bluesky", "kind": "bluesky-trending",
+      "url": "https://public.api.bsky.app/xrpc/app.bsky.unspecced.getTrendingTopics?limit=25"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Texto inventado para pruebas. No son datos reales. -->
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Noticias de Ejemplo</title>
+  <id>https://example.org/es/</id>
+  <updated>2026-10-20T07:00:00Z</updated>
+  <entry>
+    <title>La desigualdad en México y Perú: el 10 % más rico concentra más de la mitad del ingreso</title>
+    <link rel="alternate" href="https://example.org/es/desigualdad-mexico-peru"/>
+    <id>https://example.org/es/desigualdad-mexico-peru</id>
+    <published>2026-10-20T06:00:00Z</published>
+    <summary>Un informe compara el ingreso de los hogares más ricos y más pobres.</summary>
+    <content type="html"><![CDATA[
+      <p>Un informe publicado esta semana compara el ingreso de los hogares más ricos y de los más pobres en dos países de América Latina, con datos de encuestas y de registros fiscales.</p>
+      <p>En México, el 10 % más rico concentra el 57,1 % del ingreso nacional, según el informe. En Perú, la cifra es del 49,6 %.</p>
+      <p>La riqueza de los milmillonarios de la región sumó 162 mil millones de dólares el año pasado.</p>
+      <p>Los autores piden publicar cada año los datos de ingresos más altos, para que la población pueda seguir la evolución de la desigualdad y comparar las cifras entre países con los mismos criterios.</p>
+    ]]></content>
+  </entry>
+  <entry>
+    <title>Resultados de la jornada de fútbol</title>
+    <link rel="alternate" href="https://example.org/es/futbol-jornada"/>
+    <id>https://example.org/es/futbol-jornada</id>
+    <published>2026-10-20T05:00:00Z</published>
+    <summary>El equipo local ganó 3 a 1.</summary>
+  </entry>
+</feed>

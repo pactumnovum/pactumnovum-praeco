@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Texto inventado para testes. Não são dados reais. -->
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Notícias Exemplo</title>
+    <link>https://example.org/pt/</link>
+    <description>Feed inventado para testes</description>
+    <item>
+      <title>Moçambique: os 1% mais ricos detêm quase um terço da renda</title>
+      <link>https://example.org/pt/desigualdade-mocambique</link>
+      <pubDate>Wed, 21 Oct 2026 12:00:00 GMT</pubDate>
+      <description>Um relatório analisa a desigualdade de renda em Moçambique.</description>
+      <content:encoded><![CDATA[
+        <p>Um relatório divulgado nesta quarta-feira analisa a desigualdade de renda em Moçambique com base em inquéritos aos agregados familiares e em dados fiscais.</p>
+        <p>Os 1% mais ricos detêm 29,5% da renda nacional, segundo o relatório. Os 50% mais pobres ficam com 8,1%.</p>
+        <p>A riqueza dos mais ricos do país chegou a US$ 3,2 bilhões no ano passado.</p>
+        <p>Os autores defendem a publicação anual destes dados, para que a evolução da desigualdade possa ser acompanhada e comparada com a de outros países da região.</p>
+      ]]></content:encoded>
+    </item>
+  </channel>
+</rss>

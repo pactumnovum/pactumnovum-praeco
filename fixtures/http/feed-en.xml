@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Invented text for tests. Not real data. -->
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Example News</title>
+    <link>https://example.org/</link>
+    <description>Invented feed for tests</description>
+    <item>
+      <title>Richest 1% gained more than the bottom half in Indonesia and Brazil, study finds</title>
+      <link>https://example.org/en/richest-one-percent-study?utm_source=rss</link>
+      <pubDate>Mon, 19 Oct 2026 08:00:00 GMT</pubDate>
+      <description><![CDATA[<p>A new study compares the richest households with the poorest in two large economies.</p>]]></description>
+    </item>
+    <item>
+      <title>Phone makers report a strong third quarter</title>
+      <link>https://example.org/en/phone-sales-q3</link>
+      <pubDate>Mon, 19 Oct 2026 09:30:00 GMT</pubDate>
+      <description>Shipments rose 12% to 3.1 million units, led by new mid-range models.</description>
+    </item>
+    <item>
+      <title>Study: the richest 1% in Indonesia and Brazil pulled further ahead</title>
+      <link>https://example.org/en/richest-one-percent-study/#comments</link>
+      <pubDate>Mon, 19 Oct 2026 10:00:00 GMT</pubDate>
+      <description>The same study, linked again with a different title.</description>
+    </item>
+  </channel>
+</rss>

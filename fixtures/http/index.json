@@ -1,0 +1,13 @@
+{
+  "https://example.org/feeds/en.xml": { "file": "feed-en.xml", "contentType": "application/rss+xml" },
+  "https://example.org/feeds/es.xml": { "file": "feed-es.xml", "contentType": "application/atom+xml" },
+  "https://example.org/feeds/fr.xml": { "file": "feed-fr.xml", "contentType": "application/rss+xml" },
+  "https://example.org/feeds/de.xml": { "file": "feed-de.xml", "contentType": "application/rss+xml" },
+  "https://example.org/feeds/pt.xml": { "file": "feed-pt.xml", "contentType": "application/rss+xml" },
+  "https://example.org/en/richest-one-percent-study?utm_source=rss": { "file": "article-en-1.html", "contentType": "text/html; charset=utf-8" },
+  "https://example.org/en/phone-sales-q3": { "file": "article-en-2.html", "contentType": "text/html; charset=utf-8" },
+  "https://example.org/reports/wealth": { "file": "report-page.html", "contentType": "text/html; charset=utf-8" },
+  "https://api.worldbank.org/v2/country/all/indicator/SI.POV.GINI?format=json&mrnev=1&per_page=400": { "file": "worldbank-gini.json", "contentType": "application/json" },
+  "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/ilc_di12?format=JSON&lang=EN&lastTimePeriod=1": { "file": "eurostat-gini.json", "contentType": "application/json" },
+  "https://public.api.bsky.app/xrpc/app.bsky.unspecced.getTrendingTopics?limit=25": { "file": "bluesky-trending.json", "contentType": "application/json" }
+}

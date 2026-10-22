@@ -1,0 +1,35 @@
+{
+  "feeds": [
+    { "id": "fixture-en", "name": "Example News", "lang": "en", "url": "https://example.org/feeds/en.xml" },
+    { "id": "fixture-es", "name": "Noticias de Ejemplo", "lang": "es", "url": "https://example.org/feeds/es.xml" },
+    { "id": "fixture-fr", "name": "Exemple Info", "lang": "fr", "url": "https://example.org/feeds/fr.xml" },
+    { "id": "fixture-de", "name": "Beispiel Nachrichten", "lang": "de", "url": "https://example.org/feeds/de.xml" },
+    { "id": "fixture-pt", "name": "Notícias Exemplo", "lang": "pt", "url": "https://example.org/feeds/pt.xml" },
+    { "id": "fixture-broken", "name": "Broken Feed", "lang": "en", "url": "https://example.org/feeds/missing.xml" }
+  ],
+  "datasets": [
+    {
+      "id": "worldbank-gini", "name": "World Bank", "kind": "worldbank", "unit": "count",
+      "url": "https://api.worldbank.org/v2/country/all/indicator/SI.POV.GINI?format=json&mrnev=1&per_page=400",
+      "pageUrl": "https://data.worldbank.org/indicator/SI.POV.GINI"
+    },
+    {
+      "id": "eurostat-gini", "name": "Eurostat", "kind": "eurostat", "unit": "count",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/ilc_di12?format=JSON&lang=EN&lastTimePeriod=1",
+      "pageUrl": "https://ec.europa.eu/eurostat/databrowser/view/ilc_di12/default/table"
+    }
+  ],
+  "reports": [
+    {
+      "id": "fixture-report", "name": "Example Wealth Report",
+      "url": "https://example.org/reports/wealth",
+      "linkPattern": "/wealth-report-\\d{4}\\.pdf$"
+    }
+  ],
+  "topics": [
+    {
+      "id": "bluesky-trending", "name": "Bluesky", "kind": "bluesky-trending",
+      "url": "https://public.api.bsky.app/xrpc/app.bsky.unspecced.getTrendingTopics?limit=25"
+    }
+  ]
+}

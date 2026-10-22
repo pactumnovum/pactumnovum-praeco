@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Erfundener Text für Tests. Keine echten Daten. -->
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Beispiel Nachrichten</title>
+    <link>https://example.org/de/</link>
+    <description>Erfundener Feed für Tests</description>
+    <item>
+      <title>Vietnam und Japan: Die reichsten 10 Prozent besitzen den Großteil des Vermögens</title>
+      <link>https://example.org/de/vermoegen-asien</link>
+      <pubDate>Wed, 21 Oct 2026 07:00:00 GMT</pubDate>
+      <description>Eine Studie vergleicht die Vermögensverteilung in zwei asiatischen Ländern.</description>
+      <content:encoded><![CDATA[
+        <p>Eine am Mittwoch veröffentlichte Studie vergleicht die Verteilung der Vermögen in zwei asiatischen Ländern auf Grundlage von Haushaltsbefragungen und Steuerdaten.</p>
+        <p>In Vietnam besitzen die reichsten 10 Prozent 64,3 Prozent des Vermögens. In Japan liegt der Anteil bei 57,8 Prozent.</p>
+        <p>Die Vermögen der Milliardäre beider Länder stiegen um 3,4 Mrd. € auf 128 Milliarden Euro.</p>
+        <p>Die Autorinnen und Autoren empfehlen, die Daten zu den höchsten Vermögen regelmäßig zu veröffentlichen, damit die Entwicklung der Ungleichheit über die Jahre verfolgt werden kann.</p>
+      ]]></content:encoded>
+    </item>
+  </channel>
+</rss>

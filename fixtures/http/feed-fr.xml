@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Texte inventé pour les tests. Données fictives. -->
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Exemple Info</title>
+    <link>https://example.org/fr/</link>
+    <description>Flux inventé pour les tests</description>
+    <item>
+      <title>Sénégal et Côte d'Ivoire : les 10 % les plus riches captent près de la moitié des revenus</title>
+      <link>https://example.org/fr/inegalites-afrique-ouest</link>
+      <pubDate>Tue, 20 Oct 2026 11:00:00 GMT</pubDate>
+      <description>Une étude sur les inégalités de revenus en Afrique de l'Ouest.</description>
+      <content:encoded><![CDATA[
+        <p>Une étude publiée mardi mesure les inégalités de revenus dans deux pays d'Afrique de l'Ouest, à partir d'enquêtes auprès des ménages menées sur plusieurs années.</p>
+        <p>Au Sénégal, les 10 % les plus riches captent 46,2 % des revenus, selon l'étude. En Côte d'Ivoire, cette part atteint 48,9 %.</p>
+        <p>Les ménages les plus pauvres disposent en moyenne de 1 150 euros par an.</p>
+        <p>Les auteurs recommandent de publier ces chiffres chaque année et de mieux mesurer les plus hauts patrimoines, qui échappent souvent aux enquêtes classiques.</p>
+      ]]></content:encoded>
+    </item>
+  </channel>
+</rss>

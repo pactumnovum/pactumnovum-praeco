@@ -1,0 +1,6 @@
+{
+  "topics": [
+    { "topic": "Billionaire tax vote", "displayName": "Billionaire tax vote", "description": "Lawmakers debate a tax on billionaires and the richest households.", "link": "/profile/did:plc:example/feed/topic-1" },
+    { "topic": "Football final", "displayName": "Football final", "description": "Fans react to the final match of the season.", "link": "/profile/did:plc:example/feed/topic-2" }
+  ]
+}
