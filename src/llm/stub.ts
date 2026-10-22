@@ -27,6 +27,8 @@ export function stubClient(meter?: Meter, calls: StubCall[] = []): LlmClient & {
       await record(req.purpose);
       const text = Object.values(req.content).join("\n");
       if (req.purpose === "sort") return { p: GAP_WORDS.test(text) ? 0.95 : 0.05, model: "stub" };
+      // Answer bank: the stub never matches, so a dry run never replies.
+      if (req.purpose.startsWith("answer")) return { p: 0.05, model: "stub" };
       // Claim support: confident unless the claim hedges, which sends it to the reviewer.
       const claim = req.content.claim ?? text;
       return { p: HEDGE_WORDS.test(claim) ? 0.6 : 0.95, model: "stub" };

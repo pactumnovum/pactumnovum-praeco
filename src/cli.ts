@@ -2,12 +2,17 @@
 //   run      one engine run (fetch, sort, fact-check)
 //   migrate  apply database migrations
 //   status   counts per item and fact status
+//   answer   pick a reply from the answer bank: answer <short|long> <via> "<message>"
 
 import { existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
+import { loadBank } from "./answers/bank.ts";
+import { selectAnswer } from "./answers/select.ts";
 import { loadConfig } from "./config.ts";
 import { openDb } from "./db/index.ts";
 import { migrate } from "./db/migrate.ts";
+import { VIA, type Via } from "./links.ts";
+import { createLlm } from "./llm/index.ts";
 import { errorMessage, log, registerSecrets } from "./log.ts";
 import { FIXTURES_DIR, fixtureFetcher, httpFetcher } from "./net.ts";
 import { runEngine } from "./pipeline.ts";
@@ -52,7 +57,22 @@ async function main(command: string): Promise<number> {
       });
       return summary.fetch && summary.fetch.failed === summary.fetch.sources && summary.fetch.sources > 0 ? 1 : 0;
     }
-    console.error("usage: tsx src/cli.ts run | migrate | status");
+    if (command === "answer") {
+      const [channel, via, ...words] = process.argv.slice(3);
+      if ((channel !== "short" && channel !== "long") || !VIA.includes(via as Via) || words.length === 0) {
+        console.error(`usage: tsx src/cli.ts answer <short|long> <${VIA.join("|")}> "<message>"`);
+        return 2;
+      }
+      await migrate(db);
+      const decision = await selectAnswer(createLlm(config, db), loadBank(), {
+        message: words.join(" "),
+        channel,
+        via: via as Via,
+      });
+      console.log(JSON.stringify(decision, null, 2));
+      return 0;
+    }
+    console.error("usage: tsx src/cli.ts run | migrate | status | answer");
     return 2;
   } finally {
     await db.close();

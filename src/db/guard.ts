@@ -11,7 +11,7 @@ export const SIGNATURE_QUERIES = {
   perCountry: "SELECT country, COUNT(*) AS n FROM signatures GROUP BY country ORDER BY n DESC, country ASC",
   perDay: "SELECT day, COUNT(*) AS n FROM signatures WHERE day >= ?1 GROUP BY day ORDER BY day ASC",
   columns: "SELECT name FROM pragma_table_info('signatures')",
-  perSource: "SELECT source, COUNT(*) AS n FROM signatures GROUP BY source ORDER BY n DESC, source ASC",
+  perVia: "SELECT via, COUNT(*) AS n FROM signatures GROUP BY via ORDER BY n DESC, via ASC",
 } as const;
 
 const ALLOWED_SIGNATURE_SQL = new Set(Object.values(SIGNATURE_QUERIES).map(normalize));
