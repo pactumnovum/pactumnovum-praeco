@@ -3,7 +3,7 @@
 _Updated: 2026-10-22 · dev machine_
 
 ## Now
-Paused. Milestone 1 and layer 3 (answer bank) are built and pass in dry run. Next is the first live run, which needs secrets.
+Pushed to GitHub (`origin/main`). Milestone 1 and layer 3 (answer bank) pass in dry run. Next is the first live run, which needs secrets.
 
 ## State
 - ✅ Fetch: 11 RSS/Atom feeds (en, es, fr, de, pt), 4 World Bank indicators, Eurostat Gini, 2 report watchers, Bluesky trending topics
@@ -18,7 +18,7 @@ Paused. Milestone 1 and layer 3 (answer bank) are built and pass in dry run. Nex
 - 🚧 Report editions are recorded, but PDF text is not extracted, so they end as `no_source_text`
 
 ## Next
-1. Create the GitHub repository under the project's own account, add it as `origin` and push (no remote yet)
+1. Check that `ci.yml` passed on the first push
 2. Set secrets and variables, run `engine.yml` by hand, check the first live run's counts
 3. Check that `typesafe/jev-1.14` answers with real items and look at the p distribution
 4. Decide the open answer bank points below, then edit `answers/bank.yaml` (people only)
@@ -27,6 +27,7 @@ Paused. Milestone 1 and layer 3 (answer bank) are built and pass in dry run. Nex
 7. Comparisons computed by code (`src/facts/compare.ts`) for "earns in a minute what…" posts
 
 ## Watch out
+- OpenRouter is not available yet. If that holds, the first live run uses `LLM_PROVIDER=anthropic`, where Jev is not available (CLAUDE.md section 6). Check that sorting, fact-check and answer selection work on that path before relying on it
 - With `MONTHLY_AI_BUDGET_USD` unset or 0 the engine makes no paid calls; items wait as `new`
 - The fact-check asks Sonnet for every claim below p 0.90, including very low ones (as specified); this is the main cost driver
 - Without D1 secrets, scheduled runs on Actions end with a warning and do nothing
