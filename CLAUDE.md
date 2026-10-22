@@ -25,7 +25,7 @@ Pactum Novum was started by an anonymous person. The code must never help anyone
 - Logs never print secrets, full API responses that may contain account data, or signature data.
 
 ### Signature data
-- The engine only reads **aggregates** from D1: totals, totals per country, totals per `source` (source code). Never first names, never row-level data.
+- The engine only reads **aggregates** from D1: totals, totals per country, totals per `via` (the source a visitor came from). Never first names, never row-level data.
 - The engine never writes to the `signatures` table.
 
 ### Safe by default
@@ -172,6 +172,12 @@ All secrets are GitHub Actions secrets. Non-secret switches are GitHub Actions v
 | `X_*` | secret | added in a later milestone |
 | `PUBLISHING_ENABLED` | variable | kill switch; anything but `true` means dry run |
 | `MONTHLY_AI_BUDGET_USD` | variable | hard stop for model spend |
+
+The site already writes two things the engine can read:
+- `signatures.via`: where each signer came from (`bluesky`, `x`, `tiktok`, `instagram`, `youtube`, `poster`, `share`, `press`, `newsletter`, `radar` or `direct`). Read only `COUNT(*) … GROUP BY via`.
+- `visits (day, page, via, n)`: an anonymous visit count per day, page and source.
+
+Every link the engine publishes points to `https://pactumnovum.org/?via=<platform>`. Pages are `home`, `gap` (calculator), `shop` and `posters`. Conversion per channel is signatures divided by visits for the same `via`.
 
 D1 is reached through Cloudflare's REST API. Engine tables are prefixed `engine_` and created by migrations in `migrations/`. The engine never touches tables without that prefix, except reading aggregates from `signatures`.
 
