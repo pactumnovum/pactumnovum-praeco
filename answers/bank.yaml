@@ -43,19 +43,19 @@ entries:
       I can't say anything about who that is, but I'm glad to answer questions about the pact.
     long: >-
       Pactum Novum was started by an anonymous person so the pact can stand on its own.
-      I can't say anything about who that is. Everything published is written by AI and checked
-      against the pact before it goes out. I'm glad to answer questions about the pact itself.
+      I can't say anything about who that is. Posts are written by AI and checked against the pact
+      before they go out. I'm glad to answer questions about the pact itself.
 
   - id: is-this-ai
     intent: asks whether replies or posts are written by a human or by AI
     short: >-
-      Yes, I'm an AI. Every post and reply from Pactum Novum is written by AI and checked
-      against the pact before it is published.
+      Yes, I'm an AI. Posts are written by AI and checked against the pact before they are
+      published. Replies come from a set of answers checked the same way.
     long: >-
-      Yes. Every post and reply from Pactum Novum is written by AI. Before anything is published,
-      a second AI review checks it against the pact, especially Article VI, and against the
-      platform's rules. Numbers are checked by code against their sources. A person started the
-      project, but no person writes the posts.
+      Yes, this account is run by AI. Posts are written by AI, and an AI review checks each one
+      against the pact and the platform's rules before it is published. Numbers are checked by
+      code against their sources. Replies come from a fixed set of answers that went through the
+      same checks.
 
   - id: why-anonymous
     intent: asks why the founder is anonymous or why no one stands behind it publicly
@@ -79,12 +79,11 @@ entries:
   - id: who-pays
     intent: asks who pays for Pactum Novum, whether it takes money, ads or donations
     short: >-
-      Running costs are small: a domain, hosting and AI use. They are paid privately.
-      Pactum Novum takes no donations, runs no ads and sells nothing.
+      Running costs are small: a domain, hosting and AI use. Pactum Novum takes no donations,
+      runs no ads and sells nothing.
     long: >-
-      The running costs are small: a domain, web hosting and the AI that writes the posts. They
-      are paid privately by the person who started the project. Pactum Novum takes no donations,
-      runs no paid advertising and sells nothing.
+      The running costs are small: a domain, web hosting and the AI that writes the posts.
+      Pactum Novum takes no donations, runs no paid advertising and sells nothing.
 
   - id: why-latin
     intent: asks why the project uses Latin or what the name or motto means
@@ -124,13 +123,15 @@ entries:
   - id: article-1
     intent: asks about wealth and politics, political office or influence, or Article I
     short: >-
-      Article I: anyone with private wealth above USD 100 million may not hold political office or
-      fund political influence. They keep their right to vote.
+      Article I: anyone with wealth above USD 100 million may not hold office, stand for election
+      or exercise political influence. They keep their right to vote.
     long: >-
-      Article I keeps great wealth out of politics. A person with private wealth above USD 100
-      million may not hold political office or buy political influence. They keep their right to
-      vote like everyone else. All amounts in the pact are adjusted every year to the growth of
-      global private wealth.
+      Article I separates wealth and power. A person with wealth above USD 100 million may not hold
+      political office, stand for election or exercise political influence, directly or
+      indirectly: no donations to parties or campaigns, no funding of lobbying, no control of
+      political media. Wealth is counted together with family and controlled companies. The right
+      to vote is not affected. All amounts are adjusted every year to the growth of total private
+      wealth in the world.
 
   - id: article-2-cap
     intent: asks about the wealth cap, the USD 1 billion limit, or Article II
@@ -155,14 +156,16 @@ entries:
   - id: article-4-fund
     intent: asks what the Fundus Communis is, who gets the money, or how it is governed (Article IV)
     short: >-
-      The Fundus Communis is a common fund. At least 75 % goes to the poorest 30 % of the world.
-      Half its council are people it serves, and every transaction is public.
+      The Fundus Communis is a common fund. At least 75 % goes to programmes for the poorest 30 %
+      of the world. At least half its council represent the people it serves, and all of it is public.
     long: >-
-      The Fundus Communis is the common fund in Article IV. At least 75 % of what it pays out goes
-      to the poorest 30 % of the world, through programmes that lift and train people. Tax income
-      is spent the same year, and at most 3 % of the capital each year. Half of its council, the
-      Concilium Commune, are people the fund serves. An ethics council has binding power, the
-      fund may never be used politically, and all its accounts are public.
+      The Fundus Communis is the common fund in Article IV. At least 75 % goes to programmes for
+      the poorest 30 % of the world: education, skills, health and the chance to earn their own
+      income. Tax income is spent the year it is paid, and at most 3 % of the invested capital each
+      year. At least half of its council, the Concilium Commune, represent the people the fund
+      serves. An independent ethics council can exclude companies and programmes that break the
+      pact. The fund may never be used politically, and all investments, votes and results are
+      published.
 
   - id: fund-ownership
     intent: asks whether the fund will own companies or how much of a company it may hold
@@ -187,25 +190,27 @@ entries:
   - id: article-6-ai
     intent: asks about AI rules, Article VI, or whether AI will be regulated by the pact
     short: >-
-      Article VI: AI must never be used to widen the gap between people. Its benefits must reach
-      everyone, its decisions must be explainable, and people can appeal them.
+      Article VI: AI must never widen the gap between people. No discrimination, manipulation,
+      surveillance or social ranking, and no concentrating power. Its benefits must reach everyone.
     long: >-
-      Article VI says AI must never be used to widen the gap between people. It bans four things:
-      manipulating people against their own interests, fake profiles, false urgency or scarcity,
-      and helping concentrate economic or political power. The benefits of AI must reach everyone,
-      its decisions must be explainable, and people must be able to appeal them. The article
-      applies to the AI that runs Pactum Novum too.
+      Article VI says AI must never be developed or used in a way that widens the gap between
+      people. It may never be used to discriminate, to manipulate people against their own
+      interests, to surveil or socially rank people, or to concentrate economic or political power.
+      Its benefits must reach everyone. AI decisions that significantly affect a person must be
+      explainable and open to appeal before an independent body. The article also applies to the
+      AI that manages the fund and runs Pactum Novum.
 
   - id: ai-manages-money
     intent: asks why anyone should trust AI to manage the fund or worries about AI control
     short: >-
-      The AI only manages under rules people set. Half the council are people the fund serves,
-      an ethics council can overrule it, every decision is public and can be appealed.
+      AI manages the fund only within a framework set by its council, where at least half represent
+      the people it serves. An ethics council can exclude companies and programmes, and all of it is public.
     long: >-
-      The pact does not hand power to an AI. AI handles administration under rules people set.
-      Half of the governing council are people the fund serves, an ethics council has binding
-      power over decisions, every transaction is public, and Article VI requires that decisions
-      can be explained and appealed.
+      The pact does not hand power to an AI. AI manages the fund within a framework set by the
+      Concilium Commune, where at least half of the members represent the fund's beneficiaries.
+      An independent ethics council has binding authority to exclude companies and programmes that
+      break the pact. Everything is published, and under Article VI any AI decision that
+      significantly affects a person must be explainable and open to appeal.
 
   - id: amounts-adjust
     intent: asks whether the amounts are fixed, about inflation, or how the limits change over time
@@ -247,7 +252,7 @@ entries:
     long: >-
       The pact leaves room to build companies and become very wealthy, up to USD 1 billion. What
       changes is that wealth above that point goes to the poorest 30 % of the world, through
-      programmes that lift and train people. Whether that helps or hurts growth is a fair debate,
+      programmes for education, skills, health and income. Whether that helps or hurts growth is a fair debate,
       and the pact asks people to take part in it.
 
   - id: affects-me
@@ -294,8 +299,8 @@ entries:
   - id: privacy
     intent: asks what data is stored, whether it is safe to sign, or about tracking and cookies
     short: >-
-      We store a first name, a country and the date. No email, no IP address, no cookies.
-      Signatures are only shown as totals per country.
+      We store a first name, a country, the date and where the visit came from. No email, no IP
+      address, no cookies. Signatures are only shown as totals per country.
     long: >-
       Only a first name, a country, the date and the source of the visit are stored. No email, no
       IP address and no cookies. Signatures are shown only as totals per country, never as names.
@@ -305,6 +310,7 @@ entries:
     intent: asks how to withdraw or remove a signature
     short: >-
       Open pactumnovum.org in the same browser you signed with and press "Withdraw my signature".
+    link: true
     long: >-
       Open pactumnovum.org in the same browser you signed with and press "Withdraw my signature".
       The signature is deleted at once. Your browser holds a private key for this, so no one else
@@ -317,8 +323,7 @@ entries:
       the site comes straight from the database.
     long: >-
       Every signature passes Cloudflare's human check, and repeated attempts from the same source
-      are blocked. The engine also pauses itself if signatures rise in a way that looks unnatural.
-      The total on the site comes straight from the database.
+      are blocked. The total on the site comes straight from the database.
 
   - id: sources
     intent: asks where a number comes from or questions a figure in a post
@@ -336,7 +341,7 @@ entries:
     intent: asks how to help, volunteer, join or support Pactum Novum
     short: >-
       Sign, then share it with one person. There's no membership to join. Free posters to print
-      are coming to pactumnovum.org.
+      are coming soon.
     long: >-
       The most useful thing is to sign and share the pact with one person who hasn't seen it.
       There is no membership and nothing to join. Free posters to print and hang up legally will
