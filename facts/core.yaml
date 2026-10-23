@@ -1,0 +1,338 @@
+# Pactum Novum · fact sheet (seed)
+#
+# Every number the engine publishes must come from this file or from the `facts` table it seeds.
+# Each entry has a verbatim quote from its source. Before first use, and whenever `recheck` is true,
+# the engine fetches `url` and confirms that `quote` appears on the page (ignoring curly vs straight
+# quotes and whitespace). A fact that fails the check is disabled, never edited.
+#
+# volatile: the number changes often (market values, real-time wealth). Do not use it more than
+#           30 days after `published`; refresh it from a newer dated source instead.
+# region:   global unless the number is about one country or bloc. Rotate regions and never lean on one country.
+# Claims never name individual people.
+#
+# Researched 2026-10-22. Left out because sources disagreed or could not be verified: total global
+# private wealth (UBS 2026), "half of global wealth is held by 1.5% of people", the number of companies
+# worth over USD 1 trillion, and US vs China AI investment (not about inequality between people).
+
+version: 1
+researched: '2026-10-22'
+facts:
+- id: top1-share-global-wealth
+  claim: The richest 1% of the world's population controls 37% of global wealth.
+  value: 37%
+  source: World Inequality Lab, World Inequality Report 2026
+  url: https://wid.world/document/world-inequality-report-2026
+  published: '2025-12-10'
+  quote: The top 1% alone, roughly the adult population of the United Kingdom, controls 37% of global wealth.
+  topic: wealth
+  region: global
+  volatile: false
+  recheck: false
+- id: bottom50-share-global-wealth
+  claim: The poorest half of the world's population owns 2% of global wealth.
+  value: 2%
+  source: World Inequality Lab, World Inequality Report 2026
+  url: https://wid.world/document/world-inequality-report-2026
+  published: '2025-12-10'
+  quote: The global bottom 50% owns 2% of wealth (at 2025 PPP).
+  topic: wealth
+  region: global
+  volatile: false
+  recheck: false
+- id: top10-share-global-income
+  claim: The richest 10% of the world's population captures 53% of total global income and owns 75% of total personal wealth.
+  value: 53%
+  source: World Inequality Lab, World Inequality Report 2026
+  url: https://wid.world/document/world-inequality-report-2026
+  published: '2025-12-10'
+  quote: The global top 10% owns 75% of total personal wealth and captures 53% of total income in 2025.
+  topic: wealth
+  region: global
+  volatile: false
+  recheck: false
+- id: billionaire-count-2026
+  claim: The 2026 World's Billionaires list has 3,428 billionaires, the most since the list began in 1987.
+  value: 3,428
+  source: Forbes (press release via Business Wire), "Forbes 40th Annual World's Billionaires List"
+  url: https://www.businesswire.com/news/home/20260310629058/en/Forbes-40th-Annual-Worlds-Billionaires-List
+  published: '2026-03-10'
+  quote: This year’s list features 3,428 billionaires, the most since the list’s inception in 1987.
+  topic: wealth
+  region: global
+  volatile: false
+  recheck: false
+- id: billionaire-combined-wealth-2026
+  claim: The world's billionaires are worth a record $20.1 trillion combined, up from $16.1 trillion in 2025.
+  value: $20.1 trillion
+  source: Forbes (press release via Business Wire), "Forbes 40th Annual World's Billionaires List"
+  url: https://www.businesswire.com/news/home/20260310629058/en/Forbes-40th-Annual-Worlds-Billionaires-List
+  published: '2026-03-10'
+  quote: The world’s wealthiest people are worth a record $20.1 trillion combined, up from $16.1 trillion in 2025.
+  topic: wealth
+  region: global
+  volatile: false
+  recheck: false
+- id: billionaire-wealth-growth-2025-usd
+  claim: Billionaires' combined global wealth rose by $2.5 trillion in 2025, enough to end extreme poverty 26 times over.
+  value: $2.5 trillion
+  source: Oxfam GB press release, "Billionaire wealth jumps three times faster in 2025 to highest peak ever, sparking dangerous political inequality, says Oxfam"
+  url: https://www.oxfam.org.uk/media/press-releases/billionaire-wealth-jumps-three-times-faster-in-2025-to-highest-peak-ever-sparking-dangerous-political-inequality-says-oxfam/
+  published: '2026-01-19'
+  quote: The collective global wealth of billionaires last year increased by $2.5 trillion which would be enough to eradicate extreme poverty 26 times over.
+  topic: wealth
+  region: global
+  volatile: false
+  recheck: true
+- id: billionaire-wealth-growth-2025-pct
+  claim: Billionaires' wealth grew by more than 16 per cent in 2025, three times faster than the average of the previous five years.
+  value: 16 per cent
+  source: Oxfam GB press release, "Billionaire wealth jumps three times faster in 2025 to highest peak ever, sparking dangerous political inequality, says Oxfam"
+  url: https://www.oxfam.org.uk/media/press-releases/billionaire-wealth-jumps-three-times-faster-in-2025-to-highest-peak-ever-sparking-dangerous-political-inequality-says-oxfam/
+  published: '2026-01-19'
+  quote: In 2025 billionaires' wealth jumped by over 16 per cent in 2025, three times faster than the past five-year average.
+  topic: wealth
+  region: global
+  volatile: false
+  recheck: false
+- id: usd-millionaires-count
+  claim: UBS counts roughly 57.5 million US-dollar millionaires in the markets it analyses.
+  value: 57.5 million
+  source: UBS, Global Wealth Report 2026 (p. 31)
+  url: https://www.ubs.com/content/dam/assets/wm/static/gwr/global-wealth-report-en-2026.pdf
+  published: '2026-06-30'
+  quote: Of the roughly 57.5 million millionaires in US dollars that we count in the markets we analyze, only about seven million own between five and one hundred million USD.
+  topic: wealth
+  region: global
+  volatile: false
+  recheck: true
+- id: millionaires-share-of-population
+  claim: People with net assets above USD 1 million make up 1.5% of the world's population.
+  value: 1.5%
+  source: UBS, Global Wealth Report 2026 (p. 25)
+  url: https://www.ubs.com/content/dam/assets/wm/static/gwr/global-wealth-report-en-2026.pdf
+  published: '2026-06-30'
+  quote: Net assets above USD one million are owned by 1.5% of the world’s population.
+  topic: wealth
+  region: global
+  volatile: false
+  recheck: false
+- id: global-personal-wealth-growth-2025
+  claim: Global personal wealth rose by 10.8% in USD terms in 2025.
+  value: 10.8%
+  source: 'UBS media release, "Global Wealth Report 2026: Global wealth rose over 10% in 2025"'
+  url: https://www.ubs.com/global/en/media/display-page-ndp/en-20260630-gwr-2026.html
+  published: '2026-06-30'
+  quote: In 2025, global personal wealth rose by 10.8% in USD terms, significantly outpacing growth seen in 2024 (4.6%) and 2023 (4.2%).
+  topic: wealth
+  region: global
+  volatile: false
+  recheck: true
+- id: billionaire-heirs-2025
+  claim: In 2025, 91 heirs inherited a record USD 297.8 billion.
+  value: USD 297.8 billion
+  source: UBS media release, "Billionaire Ambitions Report 2025"
+  url: https://www.ubs.com/global/en/media/display-page-ndp/en-20251204-billionaire-ambitions-report-2025.html
+  published: '2025-12-04'
+  quote: In 2025, 91 heirs (64 of them male and 27 female) inherited a record USD 297.8 billion.
+  topic: wealth
+  region: global
+  volatile: false
+  recheck: false
+- id: extreme-poverty-number
+  claim: More than 824 million people, about one in ten worldwide, were living in extreme poverty (below USD 3.00 a day) in 2024.
+  value: 824 million
+  source: 'World Bank Data Blog, "September 2026 Global Poverty Update from the World Bank: One in ten worldwide live in extreme poverty"'
+  url: https://blogs.worldbank.org/en/opendata/september-2026-global-poverty-update-from-the-world-bank--one-in
+  published: '2026-09-22'
+  quote: More than 824 million people, about one in ten worldwide, were living in extreme poverty in 2024.
+  topic: poverty
+  region: global
+  volatile: false
+  recheck: false
+- id: extreme-poverty-share
+  claim: The share of the world's population in extreme poverty was 10.1 percent in 2024 and is projected to fall to 9.8 percent in 2026.
+  value: 10.1 percent
+  source: 'World Bank Data Blog, "September 2026 Global Poverty Update from the World Bank: One in ten worldwide live in extreme poverty"'
+  url: https://blogs.worldbank.org/en/opendata/september-2026-global-poverty-update-from-the-world-bank--one-in
+  published: '2026-09-22'
+  quote: Global extreme poverty is projected to decline marginally from 10.1 percent in 2024 to 9.8 percent in 2026.
+  topic: poverty
+  region: global
+  volatile: false
+  recheck: false
+- id: below-8-30-a-day
+  claim: In 2024, 46.2 percent of the world's population (3,758.1 million people) lived below the USD 8.30-a-day poverty line.
+  value: 3,758.1 million
+  source: 'World Bank, Global Poverty Monitoring Technical Note 53, "September 2026 Update to the Poverty and Inequality Platform (PIP): What''s New" (p. 5)'
+  url: https://documents1.worldbank.org/curated/en/099045009172613939/pdf/IDU-b0fd1e84-2a98-44de-9bb2-d2ac3f5e0e2a.pdf
+  published: 2026-09
+  quote: At $8.30, the poverty rate is revised slightly upward from 46.1 (3,751.0 million) to 46.2 percent (3,758.1 million people).
+  topic: poverty
+  region: global
+  volatile: false
+  recheck: false
+- id: hunger-number
+  claim: An estimated 645 million people, 7.8 percent of the global population, faced hunger in 2025.
+  value: 645 million
+  source: 'FAO Newsroom, "SOFI 2026: Hunger not inevitable, FAO says as global hunger report shows progress"'
+  url: https://www.fao.org/newsroom/detail/sofi-2026--hunger-not-inevitable--fao-says-as-global-hunger-report-shows-progress/en
+  published: '2026-07-21'
+  quote: According to the SOFI report, an estimated 645 million people (7.8 percent of the global population) faced hunger in 2025.
+  topic: poverty
+  region: global
+  volatile: false
+  recheck: false
+- id: out-of-school-children
+  claim: 273 million children, adolescents and youth are out of school, a rise for the seventh consecutive year.
+  value: 273 million
+  source: UNESCO GEM Report, "What does the 2026 GEM Report say about access and equity in education?"
+  url: https://www.unesco.org/gem-report/en/articles/what-does-2026-gem-report-say-about-access-and-equity-education
+  published: '2026-09-07'
+  quote: GEM Report and UIS data show that 273 million children, adolescents and youth are out of school,
+  topic: poverty
+  region: global
+  volatile: false
+  recheck: true
+- id: billionaire-effective-tax-rate
+  claim: Billionaires' current effective tax rate is equivalent to 0.3% of their wealth.
+  value: 0.3%
+  source: Gabriel Zucman, "A blueprint for a coordinated minimum effective taxation standard for ultra-high-net-worth individuals" (report for the G20 presidency), p. 8
+  url: https://gabriel-zucman.eu/files/report-g20.pdf
+  published: '2024-06-25'
+  quote: the current effective tax rate of billionaires, equivalent to 0.3% of their wealth.
+  topic: tax
+  region: global
+  volatile: false
+  recheck: true
+- id: two-percent-billionaire-tax-revenue
+  claim: A minimum tax of 2% of wealth on the world's billionaires would raise $200-$250 billion a year from about 3,000 taxpayers.
+  value: $200-$250 billion
+  source: Gabriel Zucman, "A blueprint for a coordinated minimum effective taxation standard for ultra-high-net-worth individuals", p. 7
+  url: https://gabriel-zucman.eu/files/report-g20.pdf
+  published: '2024-06-25'
+  quote: A minimum tax equal to 2% of wealth on global billionaires would raise $200-$250 billion per year in tax revenue from about 3,000 taxpayers globally;
+  topic: tax
+  region: global
+  volatile: false
+  recheck: false
+- id: wealth-tax-millionaires-billionaires-revenue
+  claim: An annual wealth tax of up to 5 percent on the world's multi-millionaires and billionaires could raise $1.7 trillion a year.
+  value: $1.7 trillion
+  source: Oxfam International press release, "Richest 1% bag nearly twice as much wealth as the rest of the world put together over the past two years"
+  url: https://www.oxfam.org/en/press-releases/richest-1-bag-nearly-twice-much-wealth-rest-world-put-together-over-past-two-years
+  published: '2023-01-16'
+  quote: A tax of up to 5 percent on the world's multi-millionaires and billionaires could raise $1.7 trillion a year
+  topic: tax
+  region: global
+  volatile: false
+  recheck: true
+- id: sub-saharan-africa-share-extreme-poor
+  claim: 71 percent of the world's extreme poor live in Sub-Saharan Africa.
+  value: 71 percent
+  source: United Nations Statistics Division, The Sustainable Development Goals Report 2026, Extended Report, Goal 1 (World Bank PIP data, March 2026)
+  url: https://unstats.un.org/sdgs/report/2026/extended-report/Extended-Report-2026_Goal-1.pdf
+  published: '2026'
+  quote: Given that 71 percent of the extreme poor currently live in Sub-Saharan Africa
+  topic: poverty
+  region: global
+  volatile: false
+  recheck: true
+- id: lack-essential-health-services
+  claim: An estimated 4.6 billion people worldwide still lack access to essential health services.
+  value: 4.6 billion
+  source: WHO news release, "Most countries make progress towards universal health coverage, but major challenges remain, WHO–World Bank report finds"
+  url: https://www.who.int/news/item/06-12-2025-most-countries-make-progress-towards-universal-health-coverage-but-major-challenges-remain-who-world-bank-report-finds
+  published: '2025-12-06'
+  quote: Overall, an estimated 4.6 billion people worldwide still lack access to essential health services
+  topic: poverty
+  region: global
+  volatile: false
+  recheck: true
+- id: most-valuable-company
+  claim: In October 2026 the world's most valuable company had a market value of $5.65 trillion.
+  value: $5.65 trillion
+  source: The Motley Fool, "The Largest Companies by Market Cap in October 2026"
+  url: https://www.fool.com/research/largest-companies-by-market-cap/
+  published: '2026-10-05'
+  quote: Nvidia leads as the world's most valuable company at $5.65 trillion market cap.
+  topic: companies
+  volatile: true
+  region: global
+  recheck: false
+- id: richest-1pct-emissions-two-thirds
+  claim: In 2019 the richest 1% of the world's population produced as much carbon pollution as the poorest two-thirds of humanity, about five billion people.
+  value: two-thirds
+  source: Oxfam International press release, "Richest 1% emit as much planet-heating pollution as two-thirds of humanity"
+  url: https://www.oxfam.org/en/press-releases/richest-1-emit-much-planet-heating-pollution-two-thirds-humanity
+  published: '2023-11-20'
+  quote: The richest 1 percent of the world’s population produced as much carbon pollution in 2019 than the five billion people who made up the poorest two-thirds of humanity
+  topic: climate
+  recheck: true
+  region: global
+  volatile: false
+- id: eu-tech-lobbying
+  claim: The highest-spending tech companies have the largest annual EU lobby budget of any sector, at €73 million a year.
+  value: €73 million
+  source: Corporate Europe Observatory, "The EU corporate lobby league 2026"
+  url: https://corporateeurope.org/en/2026/06/eu-corporate-lobby-league-2026
+  published: '2026-06-11'
+  quote: The highest-spenders within the tech industry have the biggest annual lobby spend overall at €73 million
+  topic: politics
+  region: eu
+  volatile: false
+  recheck: false
+- id: billionaire-donations-2024
+  claim: Before the 2024 US elections, 150 billionaire families had contributed $1.9 billion to presidential and congressional candidates, a record.
+  value: $1.9 billion
+  source: Americans for Tax Fairness, "Billionaire Clans Spend Nearly $2 BILLION On 2024 Elections"
+  url: https://4taxfairness.substack.com/p/billionaire-clans-spend-nearly-2
+  published: '2024-10-30'
+  quote: Just 150 billionaire families have already smashed the billionaire campaign-spending record, contributing $1.9 billion in support of presidential and congressional candidates, a new report from Americans for Tax Fairness (ATF) released today found.
+  topic: politics
+  region: us
+  recheck: true
+  volatile: false
+- id: ceo-worker-pay-ratio
+  claim: In 2025, S&P 500 CEOs were paid an average of $22.8 million, 312 times the wage of the median US worker.
+  value: '312'
+  source: AFL-CIO, "AFL-CIO Report Shows Top CEOs Made 312 Times Workers' Pay in 2025" (Executive Paywatch 2026)
+  url: https://aflcio.org/node/10787
+  published: '2026-08-13'
+  quote: S&P 500 CEOs took home an average pay of $22.8 million in 2025 and made 312 times the wage of the median U.S. worker
+  topic: pay
+  region: us
+  recheck: true
+  volatile: false
+- id: richest-person-wealth
+  claim: On 1 October 2026 the world's richest person was worth $936 billion.
+  value: $936 billion
+  source: Forbes Australia, "The top 10 richest people in the world (October 2026)", Forbes real-time data as of 1 October 2026
+  url: https://www.forbes.com.au/news/billionaires/the-top-10-richest-people-in-the-world-october-2025/
+  published: '2026-10-02'
+  quote: He’s worth $936 billion.
+  topic: wealth
+  volatile: true
+  recheck: true
+  region: global
+- id: gender-gap-economic-participation
+  claim: Globally, the gender gap in economic participation and opportunity is only 61.7% closed.
+  value: 61.7%
+  source: World Economic Forum, "Twenty Years of Progress on Gender Parity Now Fragile, WEF Report Finds" (Global Gender Gap Report 2026)
+  url: https://www.weforum.org/press/2026/09/gendergap26/
+  published: '2026-09-16'
+  quote: Economic participation and opportunity (61.7%) and political empowerment (22.1%) are the dimensions furthest away from parity.
+  topic: gender
+  region: global
+  volatile: false
+  recheck: false
+- id: richest-1pct-new-wealth-share
+  claim: In the two years to December 2021, the richest 1% captured $26 trillion, or 63 per cent, of all new wealth created worldwide.
+  value: 63 per cent
+  source: Oxfam GB press release, "Richest 1% grab nearly twice as much new wealth as rest of the world put together" (Survival of the Richest)
+  url: https://www.oxfam.org.uk/mc/ar8thi/
+  published: '2023-01-16'
+  quote: $26 trillion (63 per cent) was captured by the richest 1%
+  topic: wealth
+  region: global
+  volatile: false
+  recheck: false
