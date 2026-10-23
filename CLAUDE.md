@@ -25,7 +25,7 @@ Pactum Novum was started by an anonymous person. The code must never help anyone
 - Logs never print secrets, full API responses that may contain account data, or signature data.
 
 ### Signature data
-- The engine only reads **aggregates** from D1: totals, totals per country, totals per `via` (the source a visitor came from). Never first names, never row-level data.
+- The engine only reads **aggregates** from D1: from `signatures`, totals per country and per `via` (the source a visitor came from); from `visits`, the counts per day, page and `via`. Never first names, never row-level signature data.
 - The engine never writes to the `signatures` table.
 
 ### Safe by default
@@ -43,7 +43,7 @@ The engine serves a six-article pact. The full text is on pactumnovum.org. What 
 - **Article III** A tax of 1 % on wealth between USD 10 and 100 million, and 2 % between USD 100 million and 1 billion.
 - **Article IV** The Fundus Communis: at least 75 % to the poorest 30 % of the world, full transparency, no political use.
 - **Article V** A cap of USD 500 billion on company value.
-- **Article VI** AI must never widen the gap between people. No manipulation against people's interests, no fake profiles, no false urgency or scarcity, no help concentrating power. **This applies to this engine.**
+- **Article VI** AI must never widen the gap between people. It may never be used to discriminate, to manipulate people against their own interests, to surveil or socially rank people, or to concentrate economic or political power. Its benefits must reach everyone, and AI decisions that significantly affect a person must be explainable and open to appeal. **This applies to this engine.** (The bans on fake profiles and false urgency come from the system prompt, not from the pact.)
 
 Amounts are adjusted yearly to global private wealth. Signatures are collected until **15 June 2027**. The pact is handed over on **10 December 2027**.
 
