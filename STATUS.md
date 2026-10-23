@@ -1,6 +1,6 @@
 # STATUS — praeco
 
-_Updated: 2026-10-22 · dev machine_
+_Updated: 2026-10-23 · dev machine_
 
 ## Now
 Milestone 1 and layer 3 (answer bank) pass in dry run, CI green. The site side is live. Next: make the `anthropic` provider path work without Jev, then the first live run.
@@ -10,7 +10,7 @@ Milestone 1 and layer 3 (answer bank) pass in dry run, CI green. The site side i
 - ✅ Sort with Jev (`typesafe/jev-1.14`, Decisions API), threshold 0.90
 - ✅ Fact-check: numbers by code, claim support by Jev, Sonnet below 0.90
 - ✅ D1 over REST, local SQLite for dry runs, SQL guard, migration 0001
-- ✅ Layer 3: `answers/bank.yaml` loaded and validated, Jev picks an entry, text used as written (`src/answers/`)
+- ✅ Layer 3: `answers/bank.yaml` loaded and validated, Jev picks an entry, text used as written (`src/answers/`). Bank revised 23 Oct; the seven open points are resolved
 - ✅ Signature aggregates read per `via`
 - ✅ Site side live (22 Oct): `signatures.via` and the anonymous `visits` table exist in D1, the page sends `?via=` with signatures and visit counts
 - ✅ Budget meter, secret redaction, 74 tests, ci.yml (tests, type check, gitleaks), engine.yml (hourly)
@@ -22,9 +22,9 @@ Milestone 1 and layer 3 (answer bank) pass in dry run, CI green. The site side i
 1. `LLM_PROVIDER=anthropic` without Jev (CLAUDE.md section 6): Haiku with a constrained JSON choice, confirmed by Sonnet at the same thresholds, for sorting, claim support and answer selection. Test against fixtures, no secrets needed
 2. Set secrets and variables, run `engine.yml` by hand, check the first live run's counts
 3. Check that `typesafe/jev-1.14` answers with real items and look at the p distribution
-4. Decide the open answer bank points below, then edit `answers/bank.yaml` (people only)
+4. Answer bank translations (es, fr, de, pt) once the English is approved (people only)
 5. Milestone 2: ideas (Haiku), ethics check (Sonnet + Jev per rule), queue
-6. Read `visits` aggregates for conversion per `via`: CLAUDE.md section 7 describes the table, but sections 1 and 7 still say only `signatures` may be read, so settle the spec first
+6. Read `visits` aggregates for conversion per `via` (spec settled 23 Oct: CLAUDE.md sections 1 and 7 allow it)
 7. Comparisons computed by code (`src/facts/compare.ts`) for "earns in a minute what…" posts
 
 ## Watch out
@@ -32,14 +32,6 @@ Milestone 1 and layer 3 (answer bank) pass in dry run, CI green. The site side i
 - With `MONTHLY_AI_BUDGET_USD` unset or 0 the engine makes no paid calls; items wait as `new`
 - The fact-check asks Sonnet for every claim below p 0.90, including very low ones (as specified); this is the main cost driver
 - Without D1 secrets, scheduled runs on Actions end with a warning and do nothing
-- Answer bank points that need a human decision (the engine uses the text as is):
-  - `article-6-ai` long lists bans that are not in Article VI (fake profiles, false urgency); the pact names discrimination, manipulation, surveillance or social ranking, and concentrating power
-  - `who-pays` long says something about the founder, against system prompt rule 3 and the bank's own rule
-  - `is-this-ai` and `who-is-behind` long say every reply is written by AI, but replies come from this bank
-  - `bots` long describes a signature brake that arrives in milestone 4
-  - `article-4-fund`, `ai-manages-money`: "half are people it serves", "every decision can be appealed", "can overrule it" go further than the pact text
-  - `withdraw`, `how-to-help` short name the domain without `link: true`; X turns it into a link
-  - `privacy` short leaves out that the visit source (`via`) is stored
 - One reply decision costs about 37 Jev calls (5 never_reply + 32 entries)
 
 ## Run & test
