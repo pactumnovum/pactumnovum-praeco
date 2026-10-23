@@ -16,6 +16,7 @@ Milestone 1 and layer 3 (answer bank) pass in dry run, CI green. The site side i
 - ✅ Budget meter, secret redaction, 74 tests, ci.yml (tests, type check, gitleaks), engine.yml (hourly)
 - 🚧 IMF adapter written but disabled: the DataMapper API returned 403 to non-browser clients
 - 🚧 OECD not implemented yet
+- 🚧 `facts/core.yaml`: seed fact sheet (29 facts with verbatim quotes, researched 22 Oct) is committed but not yet loaded into the `facts` table or checked against its URLs
 - 🚧 Report editions are recorded, but PDF text is not extracted, so they end as `no_source_text`
 
 ## Next
